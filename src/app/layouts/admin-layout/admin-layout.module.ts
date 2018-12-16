@@ -12,17 +12,28 @@ import { MapsComponent } from '../../maps/maps.component';
 import { NotificationsComponent } from '../../notifications/notifications.component';
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
 
+import { HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
+
 import {
   MatButtonModule,
   MatInputModule,
   MatRippleModule,
   MatFormFieldModule,
   MatTooltipModule,
-  MatSelectModule
+  MatSelectModule,
+  MatDialogModule,
 } from '@angular/material';
+
+import { ToolListComponent } from 'app/tools/tool-list/tool-list.component';
+import { LocationListComponent } from 'app/locations/location-list/location-list.component';
+import { AddToolDialogComponent } from 'app/tools/add-tool-dialog/add-tool-dialog.component';
+
 @NgModule({
   imports: [
     CommonModule,
+    HttpClientModule,
+    HttpModule,
     RouterModule.forChild(AdminLayoutRoutes),
     FormsModule,
     MatButtonModule,
@@ -31,6 +42,7 @@ import {
     MatInputModule,
     MatSelectModule,
     MatTooltipModule,
+    MatDialogModule,
   ],
   declarations: [
     DashboardComponent,
@@ -41,6 +53,12 @@ import {
     MapsComponent,
     NotificationsComponent,
     UpgradeComponent,
+    ToolListComponent,
+    LocationListComponent,
+    AddToolDialogComponent
+  ],
+  entryComponents: [
+    AddToolDialogComponent
   ]
 })
 

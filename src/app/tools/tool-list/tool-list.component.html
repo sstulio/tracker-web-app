@@ -1,0 +1,53 @@
+<div class="main-content">
+  <div class="container-fluid">
+
+    <div *ngFor="let location of locations">
+
+      <div class="card">
+        <div class="card-header card-header-tabs card-header-success">
+          <div class="nav-tabs-navigation">
+            <div class="nav-tabs-wrapper">
+              <span class="nav-tabs-title"><strong> {{ location.name }} </strong></span>
+              <button (click)="openAddToolDialog(location)" mat-raised-button type="submit" class="btn btn-white btn-round btn-just-icon pull-right">
+                <i class="material-icons">add</i>
+                <div class="ripple-container"></div>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="tab-content">
+
+            <div class="tab-pane active">
+              <div class="table-responsive">
+                <table class="table tools-table" *ngIf="hasTools(location)">
+                  <thead class=" text-primary">
+                    <tr>
+                      <th>
+                        Nome
+                      </th>
+                      <th>
+                        Código
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let tool of location.tools">
+                      <td>
+                        {{ tool.name }}
+                      </td>
+                      <td>
+                        {{ tool.code }}
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

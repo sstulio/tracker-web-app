@@ -1,0 +1,16 @@
+.card {
+    margin-bottom: 60px
+}
+
+.tool-item {
+    cursor: pointer;
+}
+
+// .tool-item :hover {
+//     background-color: #eaeaea
+// }
+
+table.tools-table tr:hover td {
+    background-color: #eaeaea;
+    cursor: pointer;
+}

@@ -1,0 +1,15 @@
+<h1 mat-dialog-title>Nova Ferramenta</h1>
+<div mat-dialog-content>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Nome" [(ngModel)]="newTool.name">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+      <input matInput placeholder="Código" [(ngModel)]="newTool.code">
+    </mat-form-field>
+
+</div>
+<div>
+  <button mat-button (click)="onNoClick()">Cancelar</button>
+  <button mat-button [mat-dialog-close]="newTool" cdkFocusInitial>Adicionar</button>
+</div>
