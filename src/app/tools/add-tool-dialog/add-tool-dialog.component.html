@@ -5,11 +5,12 @@
   </mat-form-field>
 
   <mat-form-field class="example-full-width">
-      <input matInput placeholder="Código" [(ngModel)]="newTool.code">
-    </mat-form-field>
+    <input matInput placeholder="Código" [(ngModel)]="newTool.code">
+  </mat-form-field>
 
 </div>
 <div>
-  <button mat-button (click)="onNoClick()">Cancelar</button>
-  <button mat-button [mat-dialog-close]="newTool" cdkFocusInitial>Adicionar</button>
+  <button mat-button (click)="cancel()">Cancelar</button>
+
+  <button mat-button [disabled]="!isFormValid()" [mat-dialog-close]="result" cdkFocusInitial>Adicionar</button>
 </div>

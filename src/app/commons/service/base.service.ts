@@ -4,7 +4,7 @@ import { HttpModule } from '@angular/http';
 import { Observable } from 'rxjs';
 import { Entity } from '../model/Entity';
 
-const TRACKER_API_URL = 'http://localhost:8080'
+const TRACKER_API_URL = 'http://localhost:8080/api'
 
 function RESOURCE_ID_URL(resource: string, id: string) {
   return `${TRACKER_API_URL}/${resource}/${id}`

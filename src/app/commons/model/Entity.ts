@@ -1,4 +1,4 @@
-export class Entity {
+export abstract class Entity {
     id?: number;
 
     constructor(data?: any) {
@@ -6,6 +6,8 @@ export class Entity {
     }
 
     equalsTo(e: Entity) {
-        return this.id === e.id;
+        return e && this.id === e.id;
     }
+
+    abstract validate(): boolean;
 }

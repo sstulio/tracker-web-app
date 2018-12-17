@@ -32,7 +32,7 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr *ngFor="let tool of location.tools">
+                    <tr *ngFor="let tool of location.tools" (click)="openChangeLocationDialog(tool)">
                       <td>
                         {{ tool.name }}
                       </td>

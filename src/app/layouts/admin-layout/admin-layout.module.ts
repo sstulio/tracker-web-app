@@ -23,11 +23,13 @@ import {
   MatTooltipModule,
   MatSelectModule,
   MatDialogModule,
+  MatListModule
 } from '@angular/material';
 
 import { ToolListComponent } from 'app/tools/tool-list/tool-list.component';
 import { LocationListComponent } from 'app/locations/location-list/location-list.component';
 import { AddToolDialogComponent } from 'app/tools/add-tool-dialog/add-tool-dialog.component';
+import { ChangeLocationDialogComponent } from 'app/tools/change-location-dialog/change-location-dialog.component';
 
 @NgModule({
   imports: [
@@ -43,6 +45,7 @@ import { AddToolDialogComponent } from 'app/tools/add-tool-dialog/add-tool-dialo
     MatSelectModule,
     MatTooltipModule,
     MatDialogModule,
+    MatListModule
   ],
   declarations: [
     DashboardComponent,
@@ -55,10 +58,12 @@ import { AddToolDialogComponent } from 'app/tools/add-tool-dialog/add-tool-dialo
     UpgradeComponent,
     ToolListComponent,
     LocationListComponent,
-    AddToolDialogComponent
+    AddToolDialogComponent,
+    ChangeLocationDialogComponent
   ],
   entryComponents: [
-    AddToolDialogComponent
+    AddToolDialogComponent,
+    ChangeLocationDialogComponent
   ]
 })
 

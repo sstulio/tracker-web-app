@@ -15,12 +15,16 @@ export class AddToolDialogComponent implements OnInit {
     public dialogRef: MatDialogRef<AddToolDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any) {}
 
-  onNoClick(): void {
+  cancel(): void {
     this.dialogRef.close();
   }
 
   ngOnInit() {
     this.newTool = new Tool(this.data);
+  }
+
+  isFormValid(): boolean {
+    return this.newTool.validate();
   }
 
 }
