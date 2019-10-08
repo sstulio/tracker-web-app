@@ -8,7 +8,7 @@
           <div class="nav-tabs-navigation">
             <div class="nav-tabs-wrapper">
               <span class="nav-tabs-title"><strong> {{ location.name }} - {{ location.costCenter }} </strong></span>
-              <button (click)="openAddToolDialog(location)" mat-raised-button type="submit" class="btn btn-white btn-round btn-just-icon pull-right">
+              <button (click)="openAddWorkerDialog(location)" mat-raised-button type="submit" class="btn btn-white btn-round btn-just-icon pull-right">
                 <i class="material-icons">add</i>
                 <div class="ripple-container"></div>
               </button>
@@ -20,14 +20,14 @@
 
             <div class="tab-pane active">
               <div class="table-responsive">
-                <table class="table tools-table" *ngIf="hasTools(location)">
+                <table class="table workers-table" *ngIf="hasWorkers(location)">
                   <thead class=" text-primary">
                     <tr>
                       <th>
                         Nome
                       </th>
                       <th>
-                        Código
+                        Matrícula
                       </th>
                       <th>
                         Histórico
@@ -38,21 +38,21 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr *ngFor="let tool of location.tools">
-                      <td (click)="openChangeLocationDialog(tool)">
-                        {{ tool.name }}
+                    <tr *ngFor="let worker of location.workers">
+                      <td (click)="openChangeLocationDialog(worker)">
+                        {{ worker.name }}
                       </td>
-                      <td (click)="openChangeLocationDialog(tool)">
-                        {{ tool.code }}
+                      <td (click)="openChangeLocationDialog(worker)">
+                        {{ worker.code }}
                       </td>
                       <td>
-                        <button (click)="listTransitions(tool)" mat-raised-button type="submit" class="btn btn-round btn-blue btn-just-icon">
+                        <button (click)="listTransitions(worker)" mat-raised-button type="submit" class="btn btn-round btn-blue btn-just-icon">
                           <i class="material-icons">history</i>
                           <div class="ripple-container"></div>
                         </button>
                       </td>
                       <td>
-                        <button (click)="deleteTool(tool)" mat-raised-button type="submit" class="btn btn-round btn-red btn-just-icon">
+                        <button (click)="deleteWorker(worker)" mat-raised-button type="submit" class="btn btn-red btn-round btn-just-icon">
                           <i class="material-icons">delete</i>
                           <div class="ripple-container"></div>
                         </button>

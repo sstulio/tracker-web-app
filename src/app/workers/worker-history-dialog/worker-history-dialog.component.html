@@ -1,0 +1,37 @@
+<h1 mat-dialog-title>Histórico de {{ worker.name }}</h1>
+<div mat-dialog-content>
+
+    <table class="table workers-table" *ngIf="hasTransitions()">
+        <thead class=" text-primary">
+          <tr>
+            <th>
+              Data
+            </th>
+            <th>
+              Origem
+            </th>
+            <th>
+              Destino
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let transition of transitions">
+            <td>
+              {{ transition.transitionDate | date: "short" : 'GMT-6' }}
+            </td>
+            <td>
+              {{ transition.beforeLocation.name }}
+            </td>
+            <td>
+                {{ transition.afterLocation.name }}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+</div>
+
+<div class="pull-right">
+  <button mat-button (click)="cancel()">Fechar</button>
+</div>

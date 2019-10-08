@@ -1,0 +1,21 @@
+<h1 mat-dialog-title>Mover {{ worker.name }}</h1>
+<div mat-dialog-content>
+
+  <p>Localização atual:</p>
+  <p><strong>{{ oldLocation.name }}</strong></p>
+  <p>Mover para:</p>
+
+  <mat-form-field>
+    <mat-select placeholder="Nova Localização" [(ngModel)]="worker.location.id">
+      <mat-option *ngFor="let location of locations" [value]="location.id">
+        {{location.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+</div>
+
+<div class="pull-right">
+  <button mat-button (click)="cancel()">Cancelar</button>
+  <button mat-button color="primary" [disabled]="isFormValid()" [mat-dialog-close]="worker" cdkFocusInitial>Mover</button>
+</div>

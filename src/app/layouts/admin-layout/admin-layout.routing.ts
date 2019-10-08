@@ -10,6 +10,7 @@ import { NotificationsComponent } from '../../notifications/notifications.compon
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
 import { ToolListComponent } from 'app/tools/tool-list/tool-list.component';
 import { LocationListComponent } from 'app/locations/location-list/location-list.component';
+import { WorkerListComponent } from 'app/workers/worker-list/worker-list.component';
 
 export const AdminLayoutRoutes: Routes = [
     // {
@@ -63,5 +64,6 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'notifications',  component: NotificationsComponent },
     { path: 'upgrade',        component: UpgradeComponent },
     { path: 'tools',          component: ToolListComponent },
-    { path: 'locations',      component: LocationListComponent }
+    { path: 'locations',      component: LocationListComponent },
+    { path: 'workers',        component: WorkerListComponent }
 ];

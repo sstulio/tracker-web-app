@@ -7,7 +7,7 @@
         <div class="card-header card-header-tabs card-header-success">
           <div class="nav-tabs-navigation">
             <div class="nav-tabs-wrapper">
-              <span class="nav-tabs-title"><strong> {{ location.name }} </strong></span>
+              <span class="nav-tabs-title"><strong> {{ location.name }} - {{location.costCenter}}</strong></span>
             </div>
           </div>
         </div>
@@ -24,7 +24,10 @@
           <div class="nav-tabs-wrapper">
               <mat-form-field class="example-full-width">
                   <input matInput placeholder="Nome" [(ngModel)]="newLocation.name">
-                </mat-form-field>
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Centro de custo" [(ngModel)]="newLocation.costCenter">
+              </mat-form-field>
           </div>
         </div>
       </div>

@@ -6,6 +6,8 @@ import { Location } from '../../locations/location';
 import { AddToolDialogComponent } from '../add-tool-dialog/add-tool-dialog.component';
 import { LocationService } from 'app/locations/location.service';
 import { ChangeLocationDialogComponent } from '../change-location-dialog/change-location-dialog.component';
+import { ToolHistoryDialogComponent } from '../tool-history-dialog/tool-history-dialog.component';
+import { Transition } from 'app/transitions/transition';
 
 @Component({
   selector: 'app-tool-list',
@@ -53,6 +55,25 @@ export class ToolListComponent implements OnInit {
         this.onChangeLocationDialogClosed(updatedTool);
       }
     });
+  }
+
+  deleteTool(tool: Tool): void {
+    this.toolService.delete(tool.id).subscribe(() => {
+      // remove deleted tool from location list
+      const location = this.locations.find(location => location.tools.some(t => t.equalsTo(tool)));
+      const toolIndex = location.tools.findIndex(t => t.equalsTo(tool));
+      location.tools.splice(toolIndex, 1);
+    });
+  }
+
+  listTransitions(tool: Tool): void {
+    this.toolService.listTransitions(tool.id).subscribe(transitions => {
+      this.openHistoryDialog(tool, transitions)
+    });
+  }
+
+  openHistoryDialog(tool: Tool, transitions: Transition[]): void {
+    this.dialog.open(ToolHistoryDialogComponent, { data: { tool: tool, transitions: transitions }, width: '500px' }); 
   }
 
   onAddToolDialogClosed(newTool: Tool) {

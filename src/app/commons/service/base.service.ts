@@ -6,10 +6,10 @@ import { Entity } from '../model/Entity';
 
 const TRACKER_API_URL = '/api'
 
-function RESOURCE_ID_URL(resource: string, id: string) {
+export function RESOURCE_ID_URL(resource: string, id: string) {
   return `${TRACKER_API_URL}/${resource}/${id}`
 }
-function RESOURCE_URL(resource: string) {
+export function RESOURCE_URL(resource: string) {
   return `${TRACKER_API_URL}/${resource}`
 }
 

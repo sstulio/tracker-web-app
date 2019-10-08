@@ -1,31 +1,32 @@
 import { Injectable } from '@angular/core';
-import { BaseService, RESOURCE_ID_URL } from 'app/commons/service/base.service';
-import { Tool } from './tool'
+import { BaseService } from 'app/commons/service/base.service';
+import { Worker } from './worker'
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { Transition } from 'app/transitions/transition';
+import { RESOURCE_ID_URL } from 'app/commons/service/base.service'
 
 @Injectable({
   providedIn: 'root'
 })
-export class ToolService extends BaseService<Tool> {
+export class WorkerService extends BaseService<Worker> {
 
-  resource = 'tool'
+  resource = 'worker'
 
   constructor(public http: HttpClient) {
     super(http);
   }
 
-  get(id: number): Observable<Tool> {
+  get(id: number): Observable<Worker> {
     return this.getEntity(id).pipe(map(data => {
-      return new Tool(data);
+      return new Worker(data);
     }))
   }
 
-  list(): Observable<Tool[]> {
+  list(): Observable<Worker[]> {
     return this.listEntity().pipe(
-      map(list => list.map(item => new Tool(item))));
+      map(list => list.map(item => new Worker(item))));
   }
 
   listTransitions(id: number): Observable<Transition[]> {
@@ -33,21 +34,21 @@ export class ToolService extends BaseService<Tool> {
       map(list => list.map(item => new Transition(item))));
   }
 
-  add(tool: Tool): Observable<Tool> {
-    return this.addEntity(tool).pipe(map(data => {
-      return new Tool(data);
+  add(worker: Worker): Observable<Worker> {
+    return this.addEntity(worker).pipe(map(data => {
+      return new Worker(data);
     }))
   }
 
-  update(tool: Tool): Observable<Tool> {
-    return this.updateEntity(tool).pipe(map(data => {
-      return new Tool(data);
+  update(worker: Worker): Observable<Worker> {
+    return this.updateEntity(worker).pipe(map(data => {
+      return new Worker(data);
     }))
   }
 
-  delete(id: number): Observable<Tool> {
+  delete(id: number): Observable<Worker> {
     return this.deleteEntity(id).pipe(map(data => {
-      return new Tool(data);
+      return new Worker(data);
     }))
   }
 
