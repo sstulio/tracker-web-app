@@ -33,7 +33,7 @@
     "@ngx-loading-bar/http": "^3.0.0",
     "@ngx-loading-bar/http-client": "^3.0.0",
     "@ngx-loading-bar/router": "^3.0.0",
-    "ajv": "6.4.0",
+    "ajv": "6.12.3",
     "arrive": "2.4.1",
     "bootstrap": "4.1.0",
     "bootstrap-material-design": "4.1.1",
